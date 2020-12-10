@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block current_app_content %}
+    <div class="text-center">
+        <br>
+        <br>
+        <img src="https://www.parknshop.com/_ui/desktop/theme-igc/images/enu/home/about/img_logo.jpg">
+        <h3>{{ _('Please sign in') }}</h3>
+        <br>
+        <br>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                {{ wtf.quick_form(form) }}
+            </div>
+        </div>
+        <br>
+        <br>
+        <p>{{ _('New User?') }} <a href="{{ url_for('auth.register') }}">{{ _('Click to Register!') }}</a></p>
+        <p>
+            {{ _('Forgot Your Password?') }}
+            <a href="{{ url_for('auth.reset_password_request') }}">{{ _('Click to Reset It') }}</a>
+        </p>
+    </div>
+{% endblock %}
